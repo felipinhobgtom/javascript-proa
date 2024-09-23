@@ -8,4 +8,4 @@ do {
     console.log(`Quantidade de grãos: ${graos}, Quantidade total: ${somatoria}`);
     graos*= 2;
     contadora++;
-}while (contadora < 65)
+}while (contadora < 65) // no repita é o contrário
