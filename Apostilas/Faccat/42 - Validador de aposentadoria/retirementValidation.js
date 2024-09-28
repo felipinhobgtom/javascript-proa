@@ -17,7 +17,7 @@ let hoje = new Date();
 
 idade = hoje.getFullYear() - anonasc;
 
-while (pedido != "requerer" || pedido != "nao requerer") {
+while (pedido != "requerer" && pedido != "nao requerer") {
   if (idade >= 65 && anoscontribuidos >= 25) {
     alert(`O funcionário ${codigo} pode exigir aposentadoria`);
     pedido = prompt(
@@ -28,16 +28,22 @@ while (pedido != "requerer" || pedido != "nao requerer") {
     pedido = prompt(
       "Digite 'requerer' para validar a aposentadoria\nDigite 'nao requerer' para negar a aposentadoria"
     );
-  } else alert(`O funcionário ${codigo} não tem direito a aposentadoria`);
-  pedido = "nao requerer";
+  } else {
+    alert(`O funcionário ${codigo} não tem direito a aposentadoria`);
+    pedido = "nao requerer";
+  }
 
-  if(pedido != "requerer" && pedido != "nao requerer"){
-    alert("Você especificou o pedido de aposentadoria incorretamente.")
+  if (pedido != "requerer" && pedido != "nao requerer") {
+    alert("Você especificou o pedido de aposentadoria incorretamente.");
   }
 }
 
-if(pedido == "requerer"){
-    document.getElementById("holder").innerHTML = `O seu pedido de aposentadoria foi permitido com sucesso!`
-}else{
-    document.getElementById("holder").innerHTML = `O seu pedido de aposentadoria foi negado.`
+if (pedido == "requerer") {
+  document.getElementById(
+    "holder"
+  ).innerHTML = `O seu pedido de aposentadoria foi permitido com sucesso!`;
+} else {
+  document.getElementById(
+    "holder"
+  ).innerHTML = `O seu pedido de aposentadoria foi negado.`;
 }
